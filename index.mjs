@@ -14,7 +14,8 @@ const server = http.createServer((req, res) => {
                 }
                 res.writeHead(404, "text/html")
                 res.write(data)
-                return res.end(`${filepath} was not found`)
+                res.write(`${filepath} was not found`)
+                return res.end(`<p>Go <a href="./">home</a></p>`)
             })
             return
         }
